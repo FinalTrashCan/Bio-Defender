@@ -1,0 +1,287 @@
+/*************************/
+/********* Game **********/
+/*************************/
+#game{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+#surface{
+    width: 1000px;
+    height: 562.5px;
+    position: relative;
+    background-color: black;
+    background-image: url('../img/MapTest.jpg');
+    background-size: cover;
+}
+
+#cash{
+    position: absolute;
+    top: -20px;
+    left: 0;
+    font-family: Mario;
+    font-size: 1.5em;
+    color: rgb(255, 187, 0);
+    text-shadow: 1px 1px rgb(189, 140, 8);
+    width: 170px;
+    text-align: right;
+}
+#lives{
+    position: absolute;
+    top: -22px;
+    left: 200px;
+    font-family: Mario;
+    font-size: 1.6em;
+    color: rgb(228, 13, 31);
+    text-shadow: 1px 1px rgb(176, 15, 28);
+    width: 60px;
+    text-align: right;
+}
+
+#surface #settingsButton{
+    width: 50px;
+    height: 50px;
+    background-color: var(--innerButtonBlue);
+    border: 6px var(--outerButtonBlue) solid;
+    border-radius: 12px;
+
+    position: absolute;
+    z-index: 3;
+    right: 10px;
+    top: 10px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#surface #settingsButton img{
+    width: 92%;
+}
+
+#towerShopContainer{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 11%;
+    z-index: 7;
+    background-color:rgb(86, 82, 82);
+    border-top: 4px rgb(68, 64, 64) solid;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#towerShopGrid{
+    display: grid;
+    width: 60%;
+    height: 80%;
+    grid-template-columns: 15% 60% 15%;
+    column-gap: 5%;
+}
+#leftArrow{
+    width: 100%;
+    height: 100%;
+    background-color: rgb(189, 140, 8);
+    clip-path: var(--arrow);
+    transform: scaleX(-1);
+    cursor: pointer;
+}
+#rightArrow{
+    width: 100%;
+    height: 100%;
+    background-color: rgb(189, 140, 8);
+    clip-path: var(--arrow);
+    cursor: pointer;
+}
+#towerShop{
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: repeat(8, 13.75%);
+    column-gap: 7.8125%;
+}
+#towerShop img{
+    width: 100%;
+    user-select: none;
+    -webkit-user-drag:none;
+    z-index: 5;
+    justify-self: center;
+}
+#towerShop p{
+    margin: 0;
+    width: 5%;
+    text-align: center;
+    position: absolute;
+    bottom: 5%;
+    color: white;
+    font-size: 1.2em;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+
+/*** ingame objects ***/
+.tower{
+    position: absolute;
+    bottom: 100px;
+    right: 0;
+    width: 50px;
+    height: 50px;
+    z-index: 5;
+    background-size: cover;
+    background-image: url('../img/dartmonke.png');
+}
+
+#tower{
+    z-index: 7;
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: none;
+    background-size: cover;
+    background-image: url('../img/dartmonke.png');
+}
+#tower-preview-range{
+    z-index: 6;
+    display: none;
+    opacity: 1;
+}
+.range{
+    clip-path: circle(50% at 50% 50%);
+    z-index: 4;
+    opacity: 0;
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.enemy{
+    all: unset;
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    top: -100px;
+    display: block;
+    z-index: 3;
+    background-image: url('../img/enemy.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+#damage-indicater-container p{
+    margin: 0;
+    position: absolute;
+    font-size: 1.1em;
+    font-family: comicSans;
+}
+
+.projectile{
+    position: absolute;
+    background-size: contain;
+}
+
+
+.upgradeBox{
+    position: absolute;
+    right: 0;
+    top: 95px;
+    width: 200px;
+    height: 370px;
+    background-color: rgb(95, 85, 85);
+    z-index: 7;
+    transform: translateX(200px);
+}
+.upgradeBox .x-button{
+    clip-path: var(--x);
+    width: 30px;
+    height: 30px;
+    background-color: var(--bodyColor2);
+    position: relative;
+    top: 10px;
+    left: 10px;
+}
+.upgradeBox .towerName{
+    font-size: 0.9em;
+    width: 140px;
+    position: absolute;
+    left: 50px;
+    top: -9px;
+    text-align: center;
+    font-family: grufy;
+}
+.upgradeBox .buyUpgradeGrid{
+    display: grid;
+    width: 93%;
+    margin-left: auto;
+    margin-top: 35px;
+    grid-template-columns: 100%;
+    grid-template-rows: 125px 125px;
+    row-gap: 15px;
+}
+.upgradeBox .buyUpgrade{
+    background-color: rgb(69, 60, 60);
+}
+.upgradeBox .infoButton{
+    position: absolute;
+    position: absolute;
+    margin: 0;
+    bottom: 10.5px;
+    left: 9px;
+    width: 15px;
+    text-align: center;
+    border: 4px var(--outerButtonBlue) solid;
+    background-color: var(--innerButtonBlue);
+    cursor: pointer;
+}
+.upgradeInfoGrid{
+    display: grid;
+    position: absolute;
+    top: 160px;
+    right: 0;
+    grid-template-columns: 186px;
+    grid-template-rows: 125px 125px;
+    row-gap: 15px;
+    z-index: -1;
+    width: 200px;
+    transform: translateX(100%);
+    z-index: 6;
+}
+.upgradeInfoGrid p{
+    font-family: moodboard;
+    align-self: center;
+    text-align: center;
+    margin: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+    font-size: 0.9em;
+    height: 100%;
+    width: 100%;
+    position: relative;
+    color: white;
+}
+.upgradeBox .sellAmount{
+    font-size: 1.05em;
+    font-family: Mario;
+    margin: 0;
+    position: relative;
+    left: 5px;
+    top: 9px;
+    width: 125px;
+    text-align: right;
+}
+.upgradeBox .sellButton{
+    position: absolute;
+    margin: 0;
+    bottom: 10.5px;
+    right: 9px;
+    width: 45px;
+    text-align: center;
+    background-color: rgb(199, 30, 45);
+    color: white;
+}
+.upgradeBox .sellButton:hover{
+    background-color: rgb(175, 25, 37);
+    cursor: pointer;
+}
+
