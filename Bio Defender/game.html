@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="./css/style.css">
+    <link rel="stylesheet" type="text/css" href="./css/game.css">
+    <title>Bio Defender</title>
+    <script src="./javascript/lib/anime.min.js" defer></script>     <!-- ANIME JS - LIBRARY-->
+    <script src="./javascript/towers.js" defer></script>
+    <script src="./javascript/upgrades.js" defer></script>
+    <script src="./javascript/audioSettings.js" defer></script>
+    <script src="./javascript/game.js" defer></script>
+    <script src="./javascript/waves.js" defer></script>
+</head>
+<body id="game">
+
+    <div id="surface">
+        <p id="cash"></p>
+        <p id="lives"></p>
+
+        <div id="settingsButton" onclick="openSettingsMenu()">
+            <img src="./img/settings.svg" alt="settings">
+        </div>
+
+        <div id="towerShopContainer">
+            <div id="towerShopGrid">
+                <div id="leftArrow"></div>
+                <div id="towerShop"></div>          <!--Content Generated in JS-->
+                <div id="rightArrow"></div>
+            </div>
+        </div>
+
+        <div id="tower"></div>  
+        <div id="tower-preview-range" class="range" ></div>
+
+
+        <!-- CONTAINERS -->
+        <div id="enemy-container"></div>
+        <div id="damage-indicater-container"></div>
+
+        <div id="tower-container"></div>
+        <div id="range-container"></div>
+        <div id="projectile-container"></div>
+        <div id="upgradeBox-container"></div>
+        <div id="upgradeInfo-container"></div>
+
+
+        <!-- OVERLAYS -->
+        <!-- Settings -->
+        <div id="wrapper">
+            <div id="settingsMenu">
+                <h2>Settings</h2>
+                <div id="xButton" onclick="closeSettingsMenu()"></div>
+                <div class="soundContainer">
+                    <h3>Music</h3>
+                    <input type="range" min="0" max="100" value="100" class="slider" id="backgroundSlide">
+                    <p class="soundValueDisplay" id="backgroundValueDisplay"></p>
+                </div>
+                <div class="soundContainer">
+                    <h3>SFX</h3>
+                    <input type="range" min="0" max="100" value="100" class="slider" id="SFXSlide">
+                    <p class="soundValueDisplay" id="SFXValueDisplay"></p>
+                </div>
+    
+                <div style="color: white; cursor: pointer;" onclick="openTowerOverlay()">
+                    <p>Towers and Upgrades</p>
+                </div>
+                <a href="./index.html">
+                    <div style="color: white; cursor: pointer;">
+                        <p>Back To Title</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+
+        <!-- Towers -->
+        <div id="towerOverlay">
+            <div id="towerPreview">
+                <div id="backArrow" onclick="closeTowerOverlay()"></div>
+                <div id="towerGrid">
+                    <!--Generated in JS-->
+                </div>
+            </div>
+    
+            <div id="upgradeAndDescriptions">
+                <p id="towerName">Tower Name</p>
+                <p id="towerXP">Tower XP</p>
+    
+                <div>
+                    <div class="upgradeGrid" style="margin-top: 12%;" id="upgrades1">
+                        <div class="upgrade"></div>
+                        <div class="path-Arrow"></div>
+                        <div class="upgrade"></div>
+                        <div class="path-Arrow"></div>
+                        <div class="upgrade"></div>
+                    </div>
+                    <div class="upgradeGrid" style="margin-bottom: 6%;" id="upgrades2">
+                        <div class="upgrade"></div>
+                        <div class="path-Arrow"></div>
+                        <div class="upgrade"></div>
+                        <div class="path-Arrow"></div>
+                        <div class="upgrade"></div>
+                    </div>
+                </div>
+    
+                <p id="unlockButton" onclick="unlockUpgrade(0, 0)" style="display: none">Unlock</p>
+    
+                <p id="upgradeDescription">
+                    This tower description is just an example of how it will
+                    look later. Do not pay attention to this sentence.
+                </p>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
