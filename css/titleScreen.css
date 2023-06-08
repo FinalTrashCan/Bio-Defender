@@ -1,0 +1,107 @@
+/**** Title Screen ****/
+#surface{
+    background-image: url('../img/titleScreenAssets/MainBackground.jpg');
+    background-size: cover;
+}
+#surface #titleScreenWrapper{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 6;
+}
+#surface #titleAndPlayButton{
+    position: relative;
+    top: 100px;
+    z-index: 6;
+}
+#surface h1{
+    font-family: science;
+    font-size: 150px;
+    letter-spacing: 8px;
+    text-align: center;
+
+    color: var(--titleBLue);
+    margin: 0;
+    
+    position: relative;
+}
+#surface #playButtonContainer{
+    clip-path: circle(50% at 50% 50%);
+    background-color: var(--bodyColor1);
+    width: 150px;
+    height: 150px;
+    display: flex;
+    cursor: pointer;
+    
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+}
+#surface #playButton {
+    clip-path: polygon(100% 50%, 0 0, 0 100%);
+    background-color: rgba(0, 0, 0, 0.4);
+    width: 60%;
+    height: 60%;
+
+    margin-left: 27%;
+    margin-right: auto;
+    align-self: center;
+}
+#surface #playButtonContainer:hover #playButton{
+    background-color:rgba(0, 0, 0, 0.3);
+}
+#surface #playButtonContainer:hover{
+    background-color: var(--bodyColor2);
+}
+
+
+#backGroundAssetContainer{
+    position: absolute;
+    z-index: -1;
+    width: 112.5%;
+    height: 100%;
+}
+#backGroundAssetContainer img{
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    left: 0;
+}
+#backGroundAssetContainer .asset{
+    width: 100%;
+    height: 100%;
+}
+#backGroundAssetContainer .enemy{
+    z-index: 1;
+    top: 360px;
+    left: 85px;
+    width: 60px;
+}
+#backGroundAssetContainer .angryDoctor{
+    z-index: 1;
+    left: 1000px;
+    top: 240px;
+    width: 220px;
+}
+#backGroundAssetContainer .syringe{
+    z-index: 1;
+    left: 1100px;
+    top: 290px;
+    height: 90px;
+    transform: rotate(-90deg)
+}
+#backGroundAssetContainer .desinfectant{
+    z-index: 1;
+    left: -100px;
+    top: 290px;
+    width: 60px;
+    transform: rotate(20deg);
+}
+#backGroundAssetContainer .water{
+    z-index: 1;
+    left: 70px;
+    top: 300px;
+    width: 30px;
+    transform: rotate(100deg);
+    display: none;
+}

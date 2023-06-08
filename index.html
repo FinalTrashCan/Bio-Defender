@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="./css/style.css">
+    <link rel="stylesheet" type="text/css" href="./css/titleScreen.css">
+    <title>Bio Defender</title>
+    <script src="./javascript/lib/anime.min.js" defer></script>     <!-- ANIME JS - LIBRARY-->
+    <script src="./javascript/index.js" defer></script>
+</head>
+<body>
+    <div id="surface">
+        <div id="backGroundAssetContainer">
+            <img src="./img/titleScreenAssets/Drawer.png" class="asset">
+            <img src="./img/titleScreenAssets/Table.png" class="asset">
+            <img src="./img/enemy.png" class="enemy">
+            <img src="./img/titleScreenAssets/doctor.png" class="angryDoctor" style="transform: rotate(-20deg);">
+            <img src="./img/syringe.png" class="syringe" id="syringe">
+            <img src="./img/desinfectantspray.png" class="desinfectant">
+            <img src="./img/water.png" class="water" id="water">
+        </div>
+        <div id="titleScreenWrapper">
+            <div id="titleAndPlayButton">
+                <h1>Bio Defender</h1>
+    
+                <div id="playButtonContainer" onclick="loadMapSelect()">
+                    <div id="playButton"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
